@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color:rgb(109, 158, 166);
+}
+
+
+
+.main{
+    background-color: rgba(39, 145, 216,0.710);
+    height: 100%;
+    width: 100%;
+    /* position:absolute; */
+    top: 0;
+}
+.popup{
+background:white;
+width: 30px;height: 30px;
+display:flex;
+justify-content:center;
+align-items:center;
+    position: absolute;
+    top: 150px;
+    right: 90px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+/* .ak{
+    position: absolute;
+} */
+.popup-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 0 15px;
+    border-bottom: 2px solid black;
+}
+.cross_set{
+    cursor: pointer;
+}
+h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.col{
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    /* min-width: 200px; */
+    text-align: center;
+    width: 100%;
+    margin-right: 20px;
+    background: yellow;
+    padding: 10px 50px;
+}
+.col2{
+    padding: 10px 50px;
+width:100%;
+display: flex;
+justify-content: space-between;
+/* flex: 1; */
+}
+
+.showItems{
+        height: auto;
+        background: red;
+        width: 60;
+        width: 60vw;
+        margin-top: 30px;
+}
+
+.data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+@media screen and (min-width: 280px) {
+    .data{
+        align-items: unset;
+        display: flex;
+        flex-direction: inherit;
+    }
+ .col{
+    flex-direction: column !important;
+ }
+
+ .col2{
+    width:50%;
+    flex-direction: column;
+ }
+ .showItems{
+    width: 100%;
+ }
+}
+
+.main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+
+}
