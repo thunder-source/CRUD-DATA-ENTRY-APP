@@ -255,18 +255,19 @@ function EnhancedTableToolbar(props) {
         <Tooltip title="Edit">
           <IconButton
             onClick={() => {
-              // setIsDelete(!isdelete);
-              // setAllData((prev) => {
-              //   prev.editData = prev.userData.filter((element) => {
-              //     return !isDataAvaliable(element);
-              //   });
-
-              //   return { ...prev, [prev.setpopup]: true };
-              // });
-              setAllData({ ...alldata, setChoice: "default", setpopup: true });
+              setIsDelete(!isdelete);
+              let editData = alldata.userData.filter((element) => {
+                return !isDataAvaliable(element);
+              });
+              setAllData({
+                ...alldata,
+                setChoice: "default",
+                setpopup: true,
+                editData: editData[0],
+              });
             }}
           >
-            {console.log(alldata)}
+            {/* {console.log(alldata)} */}
             <EditIcon />
           </IconButton>
         </Tooltip>

@@ -40,23 +40,29 @@ const Mui = () => {
       return validator.isEmail(user.email);
     };
     if (valiadation()) {
-      if (alldata.edit) {
+      if (alldata.editData) {
         console.log("data edited");
         setAllData((prev) => {
           prev.userData.map((e) => {
-            if (e.id === alldata.edit) {
+            if (e.id === alldata.editData.id) {
+              e.name = user.name;
               e.email = user.email;
-              e.phone = user.phone;
-              e.username = user.username;
+              e.Mobile = user.Mobile;
+              e.contactName = user.contactName;
+              e.address = user.address;
+              e.date = user.date;
+              e.message = user.message;
+              e.gender = user.gender;
             }
           });
           return prev;
         });
+
         setAllData({
           ...alldata,
           setChoice: "default",
           setpopup: false,
-          edit: null,
+          editData: null,
         });
       } else {
         setAllData((prev) => {
@@ -66,8 +72,17 @@ const Mui = () => {
           return prev;
         });
         setAllData({ ...alldata, setChoice: "default", setpopup: false });
-        console.log(JSON.stringify(alldata));
       }
+      setUser({
+        name: "",
+        email: "",
+        Mobile: "",
+        contactName: "",
+        address: "",
+        date: "",
+        message: "",
+        gender: "",
+      });
     }
   };
   useEffect(() => {
@@ -84,7 +99,7 @@ const Mui = () => {
       });
       console.log(user);
     }
-  }, [alldata]);
+  }, [alldata?.editData]);
 
   // const closePopup = () => {
   //   setAllData({ ...alldata, setChoice: "default", setpopup: false });
